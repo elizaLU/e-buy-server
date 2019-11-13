@@ -11,6 +11,8 @@ const port = process.env.PORT || 4000
 app.use(corsMiddleware)
 app.use(parserMiddleware)
 
+//require("./seeds");
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`)
 })
