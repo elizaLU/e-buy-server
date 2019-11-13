@@ -1,6 +1,5 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
-const Image = require('../image/model')
 
 const Ad = db.define(
   'ad',
@@ -21,9 +20,6 @@ const Ad = db.define(
     // IMAGE FROM IMAGES
   }
 )
-
-Image.belongsTo(Ad)
-Ad.hasMany(Image)
 
 
 module.exports = Ad
