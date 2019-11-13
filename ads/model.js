@@ -13,7 +13,7 @@ const Ad = db.define(
       allowNull: false,
     },
     price: {
-      type: Sequelize.INTEGER,
+      type: Sequelize.DECIMAL,
       allowNull: false,
     },
     // PHONE & EMAIL FROM USER
