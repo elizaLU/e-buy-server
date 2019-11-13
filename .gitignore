@@ -1,1 +1,3 @@
 /node_modules
+
+# docker run -p 5432:5432 --name e-buy-server -e POSTGRES_PASSWORD=e-buy-server -d postgres
