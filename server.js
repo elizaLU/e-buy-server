@@ -17,3 +17,9 @@ app.listen(port, () => {
 
 const adRouter = require('./ads/router')
 app.use(adRouter)
+
+const userRouter = require('./user/router')
+app.use(userRouter)
+
+const imageRouter = require('./image/router')
+app.use(imageRouter)

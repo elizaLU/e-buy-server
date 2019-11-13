@@ -21,6 +21,7 @@ const Ad = db.define(
     // IMAGE FROM IMAGES
   }
 )
+
 Image.belongsTo(Ad)
 Ad.hasMany(Image)
 

@@ -10,5 +10,4 @@ const Image = db.define(
   }
 )
 
-
 module.exports = Image

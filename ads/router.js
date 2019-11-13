@@ -1,6 +1,7 @@
 const { Router } = require('express')
 const router = new Router()
 const Ad = require('./model')
+const Image = require('../image/model')
 
 router.get('/ads', (req, res, next) => {
   Ad.findAll()
@@ -15,7 +16,7 @@ router.post('/ads', (req, res, next) => {
 })
 
 router.get('/ads/:adId', (req, res, next) => {
-  Ad.findByPk(req.params.adId) //{ include: [User] }
+  Ad.findByPk(req.params.adId, { include: [Image] })
     .then(ad => {
       if (ad) {
         ad
