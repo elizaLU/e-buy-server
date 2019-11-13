@@ -11,4 +11,5 @@ app.listen(port, () => {
 })
 
 //const db = require('./db') already imported in model
-const Advertisement = require('./ads/model')
+const adRouter = require('./ads/router')
+app.use(adRouter)

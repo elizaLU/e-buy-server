@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 
-const Advertisement = db.define(
-  'advertisement',
+const Ad = db.define(
+  'ad',
   {
     description: {
       type: Sequelize.STRING,
@@ -14,7 +14,7 @@ const Advertisement = db.define(
     },
     image: {
       type: Sequelize.STRING,
-      allowNull: false,
+      allowNull: true,
     },
     price: {
       type: Sequelize.INTEGER,
@@ -32,4 +32,4 @@ const Advertisement = db.define(
 )
 
 
-module.exports = Advertisement
+module.exports = Ad
