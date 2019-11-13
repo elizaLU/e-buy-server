@@ -4,13 +4,15 @@ const Ad = require('./model')
 const Image = require('../image/model')
 
 router.get('/ads', (req, res, next) => {
-  Ad.findAll()
+  Ad.findAll(
+    //{where: {userId = req.params.userId }}
+    )
     .then(ad => res.json(ad))
     .catch(next)
 })
 
 router.post('/ads', (req, res, next) => {
-  Ad.create(req.body)
+  Ad.create(req.body, { include: [Image] })
     .then(ad => res.json(ad))
     .catch(next)
 })

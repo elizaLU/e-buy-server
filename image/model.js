@@ -4,7 +4,7 @@ const db = require('../db')
 const Image = db.define(
   'image', {
   url: {
-    type: Sequelize.STRING,
+    type: Sequelize.TEXT,
     allowNull: false
   }
 }
