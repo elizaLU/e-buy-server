@@ -1,6 +1,7 @@
 const { Router } = require('express')
 const router = new Router()
 const User = require('./model')
+const Ad = require('../ads/model')
 
 router.get('/users', (req, res, next) => {
   User.findAll()
@@ -15,7 +16,7 @@ router.post('/users', (req, res, next) => {
     .catch(next)
 })
 
-router.get('/users/:UserId', (req, res, next) => {
+router.get('/users/:userId', (req, res, next) => {
   User.findByPk(req.params.userId, { include: [Ad] })
     .then(user => {
       if (user) {
