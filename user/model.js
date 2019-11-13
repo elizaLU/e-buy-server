@@ -1,6 +1,7 @@
 const Sequelize = require('sequelize')
 const db = require('../db')
 const Ad = require('../ads/model')
+const Image = require('../image/model')
 
 const User = db.define(
   'user',
@@ -15,8 +16,11 @@ const User = db.define(
     }
   }
 )
+
 Ad.belongsTo(User)
 User.hasMany(Ad)
 
+Ad.hasMany(Image)
+Image.belongsTo(Ad)
 
 module.exports = User;

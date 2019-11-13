@@ -9,7 +9,6 @@ router.get('/users', (req, res, next) => {
     .catch(next)
 })
 //ad.belongsTo(User), so posting new add: http :4000/ads description='slippers' title='slippers, size 7' price=20 userId=1
-
 router.post('/users', (req, res, next) => {
   User.create(req.body)
     .then(user => res.json(user))

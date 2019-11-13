@@ -2,11 +2,13 @@ const { Router } = require('express')
 const router = new Router()
 const Ad = require('./model')
 const Image = require('../image/model')
+const User = require('../user/model')
+
 
 router.get('/ads', (req, res, next) => {
   Ad.findAll(
-    //{where: {userId = req.params.userId }}
-    )
+    //{ where: {userId = req.params.userId }}
+  )
     .then(ad => res.json(ad))
     .catch(next)
 })
@@ -18,7 +20,7 @@ router.post('/ads', (req, res, next) => {
 })
 
 router.get('/ads/:adId', (req, res, next) => {
-  Ad.findByPk(req.params.adId, { include: [Image] })
+  Ad.findByPk(req.params.adId, { include: [Image, User] })
     .then(ad => {
       if (ad) {
         ad
