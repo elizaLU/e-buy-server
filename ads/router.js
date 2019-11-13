@@ -14,7 +14,7 @@ router.get('/ads', (req, res, next) => {
 })
 
 router.post('/ads', (req, res, next) => {
-  Ad.create(req.body, { include: [Image] })
+  Ad.create(req.body, { include: [Image, User] })
     .then(ad => res.json(ad))
     .catch(next)
 })
