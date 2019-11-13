@@ -10,4 +10,5 @@ app.listen(port, () => {
   console.log(`Example app listening on port ${port}!`)
 })
 
-const db = require('./db')
+//const db = require('./db') already imported in model
+const Advertisement = require('./ads/model')
